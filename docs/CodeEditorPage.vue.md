@@ -5,7 +5,7 @@ Boolean
 继承自 [LiveRoom](LiveRoom.vue.md)，与类hiding动态绑定。当该值为真是隐藏，反之显示。用于接受控制，使得LiveRoom界面同一时刻只有一个组件显示（另见 [PdfViewer](PdfViewer.vue.md), [WhiteboardPage](WhiteboardPage.vue.md)）
 
 ### ```httpServer```
-用于与socketIO服务器进行数据通信
+用于与socket.io服务器进行数据通信
 
 ## data
 ### ```code```
@@ -28,6 +28,6 @@ json
 
 ### ```created```
 hook  
-vue生命周期钩子函数，在页面组件加载时触发，此处进行：
+vue 生命周期钩子函数，在页面组件加载时触发，此处进行：
 - 根据用户身份变更代码编辑器的只读属性，非房间创建者不能进行代码编辑
-- 定义匿名函数，该匿名函数用于使缓冲syncCode和code均与socketIO消息内容一致；绑定该匿名函数到socketIO接收消息的钩子函数
+- 定义匿名函数，该匿名函数用于使缓冲 syncCode 和 code 均与 socket.io 消息内容一致；绑定该匿名函数到 socket.io 接收消息的钩子函数

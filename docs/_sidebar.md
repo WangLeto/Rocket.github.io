@@ -1,7 +1,7 @@
 - Getting started
   - [快速上手](quickStartCh.md)
   - [Quick start](quickStartEn.md)
-- 前端vue Components
+- 前端 vue
   - [BannedList](BannedList.vue.md)
   - [ChatArea](ChatArea.vue.md)
   - [ChangeNickname](ChangeNickname.vue.md)
@@ -26,5 +26,7 @@
   - [房间与PPT API](build/roomppt.md)
   - [其他 API](build/other.md)
   - [文档说明](backendDocs.md)
-- 前端JavaScript文档
+- 前端 JavaScript
   - [文档说明](frontendJsDos.md)
+- 测试文档
+  - [测试](test.md)

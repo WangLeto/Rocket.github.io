@@ -1,6 +1,6 @@
 ![logo](icon.png)
 
-# Rocket Live Education Boardcast
+# Rocket Education Live Boardcast
 
 > A magical education live boardcast platform.
 

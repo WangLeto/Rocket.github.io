@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body class="wy-body-for-nav" role="document">
+    <div class="wy-grid-for-nav">
+        <div class="wy-nav-content">
+            <div class="rst-content">
+                <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                    <div itemprop="articleBody">
+                        <div class="section" id="api">
+                            <h1>用户系统API</h1>
+                            <p>class <strong>UserViewSet(viewsets.ModelViewSet)</strong></p>
+                            <div class="line-block">
+                                <div class="line">该类继承自viewsets.ModelViewSet类，包含了用户系统的各种函数</div>
+                            </div>
+                            <p><strong>方法：</strong></p>
+                            <div class="line-block">
+                                <div class="line"><strong>create(self, request)</strong></div>
+                            </div>
+                            <ul class="simple">
+                                <li>用户系统注册函数,重写其自带的create函数</li>
+                                <li>request中包含前端传入的账户密码等数据，其中前端传入的密码为经过SHA256算法加密后的值。</li>
+                                <li>此函数会查询验证码的正确性，验证码正确则注册成功返回状态码200；不成功返回失败状态码。</li>
+                            </ul>
+                            <div class="line-block">
+                                <div class="line"><strong>current_user(self,request)</strong></div>
+                            </div>
+                            <ul class="simple">
+                                <li>返回当前用户信息</li>
+                                <li>若为匿名用户各字段返回空值，否则返回当前用户的账户，昵称，是否是教师等信息</li>
+                            </ul>
+                            <div class="line-block">
+                                <div class="line"><strong>sendVertificateCode(self, request)</strong></div>
+                            </div>
+                            <ul class="simple">
+                                <li>发送验证码函数，用户注册与忘记密码功能</li>
+                                <li>根据传入request的type字段进行判断，向传入的account字段发送相应验证码</li>
+                            </ul>
+                            <div class="line-block">
+                                <div class="line"><strong>login_users(self, request)</strong></div>
+                            </div>
+                            <ul class="simple">
+                                <li>用户登录函数</li>
+                                <li>使用django自带用户系统的登录函数，根据传入的用户名与密码(SHA256加密后值)进行登录校验</li>
+                                <li>成功则返回用户信息，失败返回失败状态码</li>
+                            </ul>
+                            <div class="line-block">
+                                <div class="line"><strong>change_info(self,request)</strong></div>
+                            </div>
+                            <ul class="simple">
+                                <li>修改用户信息(昵称，密码)函数</li>
+                                <li>进行判断是修改昵称还是修改密码，进行相应的修改</li>
+                            </ul>
+                            <div class="line-block">
+                                <div class="line"><strong>forget_info(self,request)</strong></div>
+                            </div>
+                            <ul class="simple">
+                                <li>用户忘记密码函数</li>
+                                <li>检验验证码正确性，若正确则重新设置密码，否则返回更改失败</li>
+                            </ul>
+                            <div class="line-block">
+                                <div class="line"><strong>logout_user(self,request)</strong></div>
+                            </div>
+                            <ul class="simple">
+                                <li>用户登出函数</li>
+                                <li>检验是否已经登录，若已经登录，使其登出，返回登出成功，否则返回请先登录</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="articleComments">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
